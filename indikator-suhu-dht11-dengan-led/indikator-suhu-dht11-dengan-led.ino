@@ -1,10 +1,10 @@
  
-/* Program Indikator Suhu DHT11 dengan LED dibuat oleh Indobot */
+/* Program Indikator Suhu DHT11 dengan LED dibuat oleh XIII-SIJA */
 
 #include "DHT.h"            //Library DHT
+#include <Adafruit_Sensor.h> // library adafruit sensor
 #define DHTPIN 5            //Inisialisasi DHT pada pin D5
 #define DHTTYPE DHT11       //Inisialisasi tipe DHT
-#include <Adafruit_Sensor.h>
 
 DHT dht (DHTPIN,DHTTYPE);   //Mengenalkan pin dan tipe DHT
 
