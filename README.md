@@ -5,6 +5,7 @@ All Source Code Simple Project IoT
 
 - Smart Switch using Bot Telegram
 - Temperature Detector with LED and Notification using Buzzer
+- Monitoring Temperature using LED Indicator and remotexy app
 
 <hr>
 
