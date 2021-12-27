@@ -1,9 +1,8 @@
- 
-/* Program Indikator Suhu DHT11 dengan LED dibuat oleh Indobot */
+ /* Program Indikator Suhu DHT11 dengan LED dibuat oleh XIII-SIJA */
 
 #include "DHT.h"            //Library DHT
 #define DHTPIN 5            //Inisialisasi DHT pada pin D5
-#define DHTTYPE DHT11       //Inisialisasi tipe DHT
+#define DHTTYPE DHT22       //Inisialisasi tipe DHT
 #include <Adafruit_Sensor.h>
 
 DHT dht (DHTPIN,DHTTYPE);   //Mengenalkan pin dan tipe DHT
@@ -31,25 +30,28 @@ void loop() {
   Serial.print(t);              //Tampilkan suhu
   Serial.println(" *C");
   
-  if (t <= 20){                 //Jika suhu <= 20*C, maka
+  if (t <= 24){                 //Jika suhu <= 20*C, maka
     digitalWrite(LEDM, LOW); 
     digitalWrite(LEDK, LOW);
-    digitalWrite(LEDH, HIGH);   //LED hijau menyala
+    digitalWrite(LEDH, HIGH);   //LED biru menyala
     digitalWrite(pinBuzzer, HIGH);
-    delay(200);
+    delay(1000);
     digitalWrite(pinBuzzer, LOW);
-    delay(200);
+    delay(3000);
   }
-  else if (t <= 30){            //Jika suhu <= 30*C, maka
-    digitalWrite(LEDM, LOW);
-    digitalWrite(LEDK, HIGH);   //LED kuning menyala
-    digitalWrite(LEDH, LOW);
-  }
-  else if (t > 30){             //Jika suhu > 30*C, maka
+//  else if (t <= 30){            //Jika suhu <= 30*C, maka
+//    digitalWrite(LEDM, LOW);
+//    digitalWrite(LEDK, HIGH);   //LED putih menyala
+//    digitalWrite(LEDH, LOW);
+//  }
+  else if (t > 24){             //Jika suhu > 21*C, maka
     digitalWrite(LEDM, HIGH);   //LED merah menyala
     digitalWrite(LEDK, LOW);
     digitalWrite(LEDH, LOW);
     digitalWrite(pinBuzzer, HIGH);
+    delay(200);
+    digitalWrite(pinBuzzer, LOW);
+    delay(200);
   }
 
   delay(1000);                  //Jeda pembacaan 1000ms
