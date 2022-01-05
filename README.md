@@ -10,5 +10,5 @@ All Source Code Simple Project IoT
 <hr>
 
 # Pre-requisite :
-- install driver cp2102 for esp8266
-- install driver ch340 for arduino
+- install driver cp2102 for esp8266 using cp2102
+- install driver ch340 for esp using ch340 and arduino
